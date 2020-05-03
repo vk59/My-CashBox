@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/style_item_list"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="40dp"
+        android:layout_height="46dp"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/barCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:text = "Code Of product"
+        android:textAppearance="@style/textItem"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnDeletePurchase"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/icon_rubbish_bin" />
+
+</LinearLayout>

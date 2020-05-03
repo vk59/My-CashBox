@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "993738888298",
+    "firebase_url": "https://scancodeapp-e1996.firebaseio.com",
+    "project_id": "scancodeapp-e1996",
+    "storage_bucket": "scancodeapp-e1996.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993738888298:android:2eb5eeb126686c6f4aa613",
+        "android_client_info": {
+          "package_name": "space.ikostylev.scanningcodeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993738888298-v4l8o6bvaivo461a2fv5ik0tdmik0jck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "space.ikostylev.scanningcodeapp",
+            "certificate_hash": "7bbdaa678fb952140080b0a2eac77a54356d6fa2"
+          }
+        },
+        {
+          "client_id": "993738888298-1v22hqbglu2rcu81duplgvjh74f9nnmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdGop_nuarSUwzfIPDTeXJ-z1JpTMYID4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993738888298-1v22hqbglu2rcu81duplgvjh74f9nnmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
