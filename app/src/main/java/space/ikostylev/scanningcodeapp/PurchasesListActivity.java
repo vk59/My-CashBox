@@ -3,6 +3,7 @@ package space.ikostylev.scanningcodeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,25 @@ public class PurchasesListActivity extends AppCompatActivity {
                     startActivity(i);
                 } else {
                     Toast.makeText(PurchasesListActivity.this, "Add at list one product, please", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Button btnPayWithApp = findViewById(R.id.btnPayWithApp);
+        btnPayWithApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getPackageManager().getLaunchIntentForPackage("pyaterochka.app");
+                if (intent != null) {
+                    // We found the activity now start the activity
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    // Bring user to the market or let them choose an app?
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.setData(Uri.parse("market://details?id=" + "pyaterochka.app"));
+                    startActivity(intent);
                 }
             }
         });

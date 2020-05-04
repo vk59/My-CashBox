@@ -4,4 +4,5 @@
     <string name="to_purchases">To purchases</string>
     <string name="pay">Pay</string>
     <string name="pay_with_voice">Pay with voice</string>
+    <string name="pay_with_app">Pay using \'5\'App</string>
 </resources>
