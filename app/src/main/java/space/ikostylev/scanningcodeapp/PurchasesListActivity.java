@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PurchasesListActivity extends AppCompatActivity {
     LayoutInflater ltInflater;
@@ -26,37 +27,30 @@ public class PurchasesListActivity extends AppCompatActivity {
         btnPayWithQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PurchasesListActivity.this, PaymentActivity.class);
-
-                startActivity(i);
-            }
-        });
-
-        Button btnPayWithVoice = findViewById(R.id.btnPayWithVoice);
-        btnPayWithVoice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PurchasesListActivity.this, PaymentVoiceActivity.class);
-
-                startActivity(i);
+                if (ScanActivity.products.size() > 0) {
+                    Intent i = new Intent(PurchasesListActivity.this, PaymentActivity.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(PurchasesListActivity.this, "Add at list one product, please", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
     private void initPurchases() {
-        for (Product product : MainActivity.products) {
+        for (String product : ScanActivity.products) {
             View view = ltInflater.inflate(R.layout.item_purchase, null, false);
             TextView barCode = view.findViewById(R.id.barCode);
             Button btnDelete = view.findViewById(R.id.btnDeletePurchase);
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.products.remove(product);
+                    ScanActivity.products.remove(product);
                     containerPurchases.removeAllViews();
                     initPurchases();
                 }
             });
-            barCode.setText(String.valueOf(product.getCode()));
+            barCode.setText(String.valueOf(product));
             containerPurchases = findViewById(R.id.containerPurchases);
             containerPurchases.addView(view);
         }
