@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addProductToBasket(String barCode) {
-        products.add(new Product(" ", " ", 20, Long.parseLong(barCode)));
+        products.add(new Product(Long.parseLong(barCode)));
     }
 
     private void createInfoView(String text) {
@@ -181,12 +182,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         scanContainer.addView(view);
+
+//        View lineView = ltInflater.inflate(R.layout.time_line, null, false);
+//        lineView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 5));
+//        View timeLineView = lineView.findViewById(R.id.timeLineView);
+//        final int widthInitial = lineView.getWidth();
+//        int widthCurrent = widthInitial;
+//        int delta = widthInitial / 10;
+//        int deltaTime = TIME_OUT / 10;
+//        scanContainer.addView(lineView);
+//
+//        for (int i = 0; i < TIME_OUT; i += deltaTime) {
+//            widthCurrent -= delta;
+//            final int finalWidthCurrent = widthCurrent;
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    scanContainer.removeView(lineView);
+//                    lineView.setLayoutParams(new LinearLayout.LayoutParams(finalWidthCurrent, 5));
+//                    scanContainer.addView(lineView);
+//                }
+//            }, deltaTime);
+//        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 scanContainer.removeView(view);
+//                scanContainer.removeView(lineView);
             }
         }, TIME_OUT);
+
     }
 
     private void createDialog(String text) {

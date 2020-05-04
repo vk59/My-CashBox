@@ -2,6 +2,7 @@ package space.ikostylev.scanningcodeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,26 @@ public class PurchasesListActivity extends AppCompatActivity {
 
         ltInflater = getLayoutInflater();
         initPurchases();
+
+        Button btnPayWithQR = findViewById(R.id.btnPayWithQR);
+        btnPayWithQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PurchasesListActivity.this, PaymentActivity.class);
+
+                startActivity(i);
+            }
+        });
+
+        Button btnPayWithVoice = findViewById(R.id.btnPayWithVoice);
+        btnPayWithVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PurchasesListActivity.this, PaymentVoiceActivity.class);
+
+                startActivity(i);
+            }
+        });
     }
 
     private void initPurchases() {
@@ -35,7 +56,7 @@ public class PurchasesListActivity extends AppCompatActivity {
                     initPurchases();
                 }
             });
-            barCode.setText(String.valueOf(product.getBarCode()));
+            barCode.setText(String.valueOf(product.getCode()));
             containerPurchases = findViewById(R.id.containerPurchases);
             containerPurchases.addView(view);
         }

@@ -3,4 +3,5 @@
     <string name="scan">Scan</string>
     <string name="to_purchases">To purchases</string>
     <string name="pay">Pay</string>
+    <string name="pay_with_voice">Pay with voice</string>
 </resources>
