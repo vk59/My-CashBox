@@ -4,28 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/panelTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/top_panel"
+        android:text="@string/app_name"
+        android:textAppearance="@style/textOnTitle"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageShopping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+         />
+
+    <ImageView
+        android:id="@+id/imageShopping"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/image_shopping" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Description"
-        android:layout_margin="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="@string/instruct_main"
+        android:textAppearance="@style/textInstructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19999999" />
+        app:layout_constraintTop_toBottomOf="@+id/imageShopping"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnStartScan"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start scan"
+        android:layout_height="40dp"
+        android:text="@string/to_scan"
+        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:textAppearance="@style/textOnButtons"
+        android:textAllCaps="false"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.5" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

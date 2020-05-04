@@ -2,14 +2,19 @@ package space.ikostylev.scanningcodeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,6 +63,33 @@ public class PaymentActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.v(TAG, e.toString());
         }
+
+        findViewById(R.id.btnEnd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PaymentActivity.this, "Завершаем покупку", Toast.LENGTH_SHORT);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(PaymentActivity.this, MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }, ScanActivity.TIME_OUT);
+            }
+        });
+
+        findViewById(R.id.btnBackToBasket).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaymentActivity.this, PurchasesListActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        TextView panelTop = findViewById(R.id.panelTop_payment);
+        panelTop.getLayoutParams().width = MainActivity.width * 3 / 5;
     }
 
     private String getStringOfCodes() {

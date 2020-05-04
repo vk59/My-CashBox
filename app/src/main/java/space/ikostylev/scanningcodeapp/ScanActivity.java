@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,16 +40,17 @@ import java.util.List;
 
 public class ScanActivity extends AppCompatActivity {
     CameraView cameraView;
-    boolean isDetected = false;
+    boolean isDetected = true;
     Button btnStart;
-    Button btnToPurchases;
+    ImageView btnToPurchases;
+    ImageView btnBack;
     public static ArrayList<String> products = new ArrayList<>();
 
     FirebaseVisionBarcodeDetectorOptions options;
     FirebaseVisionBarcodeDetector detector;
 
     LayoutInflater ltInflater;
-    final int TIME_OUT = 5000;
+    public final static int TIME_OUT = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,15 +74,20 @@ public class ScanActivity extends AppCompatActivity {
         ltInflater = getLayoutInflater();
         btnToPurchases = findViewById(R.id.btnToPurchases);
         btnToPurchases.setOnClickListener(onToPurchasesListener);
+
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(onBackListener);
+
+        TextView panelTop = findViewById(R.id.panelTop_scan);
+        panelTop.getLayoutParams().width = MainActivity.width * 3 / 5;
     }
 
     private void setupCamera() {
         btnStart = findViewById(R.id.btnStart);
-        btnStart.setEnabled(isDetected);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isDetected = !isDetected;
+                isDetected = false;
             }
         });
 
@@ -172,7 +179,7 @@ public class ScanActivity extends AppCompatActivity {
         TextView codeOfProduct = view.findViewById(R.id.barCode);
         codeOfProduct.setText(text);
         LinearLayout scanContainer = findViewById(R.id.scanContainer);
-        Button btnDelete = view.findViewById(R.id.btnDeletePurchase);
+        ImageView btnDelete = view.findViewById(R.id.btnDeletePurchase);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,28 +188,6 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
         scanContainer.addView(view);
-
-//        View lineView = ltInflater.inflate(R.layout.time_line, null, false);
-//        lineView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 5));
-//        View timeLineView = lineView.findViewById(R.id.timeLineView);
-//        final int widthInitial = lineView.getWidth();
-//        int widthCurrent = widthInitial;
-//        int delta = widthInitial / 10;
-//        int deltaTime = TIME_OUT / 10;
-//        scanContainer.addView(lineView);
-//
-//        for (int i = 0; i < TIME_OUT; i += deltaTime) {
-//            widthCurrent -= delta;
-//            final int finalWidthCurrent = widthCurrent;
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    scanContainer.removeView(lineView);
-//                    lineView.setLayoutParams(new LinearLayout.LayoutParams(finalWidthCurrent, 5));
-//                    scanContainer.addView(lineView);
-//                }
-//            }, deltaTime);
-//        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -242,7 +227,18 @@ public class ScanActivity extends AppCompatActivity {
         @Override
         public void onClick(View v){
             Intent intent = new Intent(ScanActivity.this, PurchasesListActivity.class);
+            isDetected = false;
             startActivity(intent);
+        }
+    };
+
+    private View.OnClickListener onBackListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v){
+            Intent intent = new Intent(ScanActivity.this, MainActivity.class);
+            startActivity(intent);
+            isDetected = false;
+            finish();
         }
     };
 }

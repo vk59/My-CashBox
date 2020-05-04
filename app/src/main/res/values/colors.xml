@@ -3,6 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="textItem">#A600042C</color>
+    <color name="textItem">#2F2E41</color>
+    <color name="textInstructions">#2F2E41</color>
     <color name="backgroundItem">#FFFFFF</color>
+    <color name="button">#0975F7</color>
+    <color name="panel">#0975F7</color>
+    <color name="button_pressed_blue">#3F51B5</color>
+    <color name="text_on_buttons">#FFFFFF</color>
 </resources>

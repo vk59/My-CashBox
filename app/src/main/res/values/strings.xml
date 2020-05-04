@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">ScanningCodeApp</string>
-    <string name="scan">Scan</string>
+    <string name="app_name">My CashBox</string>
     <string name="to_purchases">To purchases</string>
     <string name="pay">Pay</string>
     <string name="pay_with_voice">Pay with voice</string>
-    <string name="pay_with_app">Pay using \'5\'App</string>
+    <string name="pay_with_app">Приложение</string>
+    <string name="instruct_main">Сканируйте штрих-коды товаров, чтобы добавить их в корзину</string>
+    <string name="to_scan">Сканировать</string>
+    <string name="qr_code">QR код</string>
+    <string name="basket">Корзина</string>
+    <string name="payment">Оплата</string>
 </resources>

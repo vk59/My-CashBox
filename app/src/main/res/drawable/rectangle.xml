@@ -6,7 +6,7 @@
         android:dashGap="18dp"
         android:dashWidth="38dp"
         android:width="1dp"
-        android:color="@color/colorPrimary"/>
+        android:color="@color/button"/>
 
-    <solid android:color="#66FEFEFE"/>
+    <solid android:color="#00000000"/>
 </shape>

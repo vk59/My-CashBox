@@ -4,18 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundItem"
     tools:context=".PaymentActivity">
+
+    <ImageView
+        android:id="@+id/btnBackToBasket"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/qr_code"
+        android:textAllCaps="false"
+        android:textAppearance="@style/textOnButtons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        app:srcCompat="@drawable/icon_back" />
+
+    <TextView
+        android:id="@+id/panelTop_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_panel"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/payment"
+        android:textAlignment="center"
+        android:textAppearance="@style/textOnTitle"
+        app:layout_constraintBottom_toTopOf="@+id/imageShopping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please, show this QR-code for a camera."
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="Поднесите QR код к кассе самообслуживания"
+        android:textAppearance="@style/textInstructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.10" />
+        app:layout_constraintTop_toBottomOf="@+id/qrImage"
+        app:layout_constraintVertical_bias="0.089" />
 
     <ImageView
         android:id="@+id/qrImage"
@@ -24,6 +63,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32999998"
         app:srcCompat="@android:drawable/btn_dialog" />
+
+    <Button
+        android:id="@+id/btnEnd"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Завершить"
+        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:textAppearance="@style/textOnButtons"
+        android:textAllCaps="false"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions" />
 </androidx.constraintlayout.widget.ConstraintLayout>

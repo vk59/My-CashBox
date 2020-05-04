@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class PurchasesListActivity extends AppCompatActivity {
                     Intent i = new Intent(PurchasesListActivity.this, PaymentActivity.class);
                     startActivity(i);
                 } else {
-                    Toast.makeText(PurchasesListActivity.this, "Add at list one product, please", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PurchasesListActivity.this, "Добавьте хотя бы один товар", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -55,13 +56,26 @@ public class PurchasesListActivity extends AppCompatActivity {
                 }
             }
         });
+
+        ImageView btnBackToScan = findViewById(R.id.btnBackToScan);
+        btnBackToScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PurchasesListActivity.this, ScanActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        TextView panelTop = findViewById(R.id.panelTop_basket);
+        panelTop.getLayoutParams().width = MainActivity.width * 3 / 5;
     }
 
     private void initPurchases() {
         for (String product : ScanActivity.products) {
             View view = ltInflater.inflate(R.layout.item_purchase, null, false);
             TextView barCode = view.findViewById(R.id.barCode);
-            Button btnDelete = view.findViewById(R.id.btnDeletePurchase);
+            ImageView btnDelete = view.findViewById(R.id.btnDeletePurchase);
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
