@@ -43,7 +43,6 @@ public class ScanActivity extends AppCompatActivity {
     boolean isDetected = true;
     Button btnStart;
     ImageView btnToPurchases;
-    ImageView btnBack;
     public static ArrayList<String> products = new ArrayList<>();
 
     FirebaseVisionBarcodeDetectorOptions options;
@@ -74,9 +73,6 @@ public class ScanActivity extends AppCompatActivity {
         ltInflater = getLayoutInflater();
         btnToPurchases = findViewById(R.id.btnToPurchases);
         btnToPurchases.setOnClickListener(onToPurchasesListener);
-
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(onBackListener);
 
         TextView panelTop = findViewById(R.id.panelTop_scan);
         panelTop.getLayoutParams().width = MainActivity.width * 3 / 5;
@@ -134,29 +130,11 @@ public class ScanActivity extends AppCompatActivity {
             for (FirebaseVisionBarcode item : firebaseVisionBarcodes) {
                 int value_type = item.getValueType();
                 switch (value_type) {
-                    case FirebaseVisionBarcode.TYPE_TEXT:
                     case FirebaseVisionBarcode.TYPE_PRODUCT: {
 //                        createDialog(item.getRawValue());
 
                         createInfoView(item.getRawValue());
                         addProductToBasket(item.getRawValue());
-                    }
-                    break;
-                    case FirebaseVisionBarcode.TYPE_URL: {
-                        // start browser Intent
-                        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                        startActivity(i);
-                    }
-                    break;
-                    case FirebaseVisionBarcode.TYPE_CONTACT_INFO: {
-                        String info = new StringBuilder("Name: ")
-                                .append(item.getContactInfo().getName().getFormattedName())
-                                .append("\n")
-                                .append("Address: ")
-                                .append(item.getContactInfo().getAddresses().get(0).getAddressLines())
-                                .append("\n")
-                                .append(item.getContactInfo().getEmails().get(0).getAddress())
-                                .toString();
                     }
                     break;
                     default: {
@@ -179,6 +157,7 @@ public class ScanActivity extends AppCompatActivity {
         TextView codeOfProduct = view.findViewById(R.id.barCode);
         codeOfProduct.setText(text);
         LinearLayout scanContainer = findViewById(R.id.scanContainer);
+        scanContainer.removeAllViews();
         ImageView btnDelete = view.findViewById(R.id.btnDeletePurchase);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,16 +208,6 @@ public class ScanActivity extends AppCompatActivity {
             Intent intent = new Intent(ScanActivity.this, PurchasesListActivity.class);
             isDetected = false;
             startActivity(intent);
-        }
-    };
-
-    private View.OnClickListener onBackListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v){
-            Intent intent = new Intent(ScanActivity.this, MainActivity.class);
-            startActivity(intent);
-            isDetected = false;
-            finish();
         }
     };
 }

@@ -14,12 +14,12 @@
     </style>
 
     <style name="textInstructions">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/textInstructions</item>
     </style>
 
     <style name="textOnButtons">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/text_on_buttons</item>
     </style>
 

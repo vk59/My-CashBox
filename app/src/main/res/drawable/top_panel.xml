@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#4D000000"
+                android:endColor="@android:color/transparent"
+                android:angle="90" />
+            <corners android:bottomRightRadius="20dp" android:bottomLeftRadius="20dp"/>
+        </shape>
+    </item>
+
     <item
         android:left="0dp"
         android:right="2dp"

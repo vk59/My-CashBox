@@ -9,4 +9,6 @@
     <string name="qr_code">QR код</string>
     <string name="basket">Корзина</string>
     <string name="payment">Оплата</string>
+    <string name="qr_instructions">Поднесите QR код к кассе самообслуживания</string>
+    <string name="exit">Завершить</string>
 </resources>

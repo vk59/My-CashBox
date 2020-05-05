@@ -7,10 +7,53 @@
     android:background="@color/backgroundItem"
     tools:context=".PaymentActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
     <ImageView
         android:id="@+id/btnBackToBasket"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/btn_blue_pressed_dark_blue"
         android:padding="10dp"
         android:paddingLeft="10dp"
@@ -18,10 +61,12 @@
         android:text="@string/qr_code"
         android:textAllCaps="false"
         android:textAppearance="@style/textOnButtons"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/btnEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toTopOf="@+id/guideline17"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/icon_back" />
 
     <TextView
@@ -43,43 +88,42 @@
 
     <TextView
         android:id="@+id/instructions"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:text="Поднесите QR код к кассе самообслуживания"
+        android:text="@string/qr_instructions"
         android:textAppearance="@style/textInstructions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
         app:layout_constraintTop_toBottomOf="@+id/qrImage"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <ImageView
         android:id="@+id/qrImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32999998"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toTopOf="@+id/guideline16"
         app:srcCompat="@android:drawable/btn_dialog" />
 
     <Button
         android:id="@+id/btnEnd"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="Завершить"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/btn_blue_pressed_dark_blue"
-        android:textAppearance="@style/textOnButtons"
-        android:textAllCaps="false"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:paddingBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/exit"
+        android:textAllCaps="false"
+        android:textAppearance="@style/textOnButtons"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions" />
+        app:layout_constraintTop_toTopOf="@+id/guideline17" />
 </androidx.constraintlayout.widget.ConstraintLayout>

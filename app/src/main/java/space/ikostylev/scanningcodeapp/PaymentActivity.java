@@ -67,23 +67,16 @@ public class PaymentActivity extends AppCompatActivity {
         findViewById(R.id.btnEnd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(PaymentActivity.this, "Завершаем покупку", Toast.LENGTH_SHORT);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i = new Intent(PaymentActivity.this, MainActivity.class);
-                        startActivity(i);
-                        finish();
-                    }
-                }, ScanActivity.TIME_OUT);
+                Intent intent = new Intent(PaymentActivity.this, MainActivity.class);
+                products.clear();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.btnBackToBasket).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PaymentActivity.this, PurchasesListActivity.class);
-                startActivity(i);
                 finish();
             }
         });
