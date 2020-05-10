@@ -1,4 +1,4 @@
-package space.ikostylev.scanningcodeapp;
+package com.vk59.mycashbox;
 
 import org.junit.Test;
 

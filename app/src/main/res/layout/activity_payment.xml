@@ -50,19 +50,19 @@
         app:layout_constraintGuide_percent="0.88" />
 
     <ImageView
-        android:id="@+id/btnBackToBasket"
+        android:id="@+id/buttonBackToBasket"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:background="@drawable/button_blue_pressed_dark_blue"
         android:padding="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="@string/qr_code"
+        android:text="@string/qrCode"
         android:textAllCaps="false"
         android:textAppearance="@style/textOnButtons"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
-        app:layout_constraintEnd_toStartOf="@+id/btnEnd"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEnd"
         app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
         app:layout_constraintTop_toTopOf="@+id/guideline17"
@@ -70,10 +70,10 @@
         app:srcCompat="@drawable/icon_back" />
 
     <TextView
-        android:id="@+id/panelTop_payment"
+        android:id="@+id/panelTopPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/top_panel"
+        android:background="@drawable/style_top_panel"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
@@ -90,7 +90,7 @@
         android:id="@+id/instructions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/qr_instructions"
+        android:text="@string/qrInstructions"
         android:textAppearance="@style/textInstructions"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
@@ -111,10 +111,10 @@
         app:srcCompat="@android:drawable/btn_dialog" />
 
     <Button
-        android:id="@+id/btnEnd"
+        android:id="@+id/buttonEnd"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:background="@drawable/button_blue_pressed_dark_blue"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="2dp"

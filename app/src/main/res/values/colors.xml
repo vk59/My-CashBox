@@ -8,6 +8,6 @@
     <color name="backgroundItem">#FFFFFF</color>
     <color name="button">#0975F7</color>
     <color name="panel">#0975F7</color>
-    <color name="button_pressed_blue">#3F51B5</color>
-    <color name="text_on_buttons">#FFFFFF</color>
+    <color name="buttonPressedBlue">#3F51B5</color>
+    <color name="textOnButtons">#FFFFFF</color>
 </resources>

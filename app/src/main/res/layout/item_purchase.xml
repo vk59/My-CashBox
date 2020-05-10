@@ -20,10 +20,10 @@
         android:layout_weight="3" />
 
     <ImageView
-        android:id="@+id/btnDeletePurchase"
+        android:id="@+id/buttonDeletePurchase"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_weight="1"
-        app:srcCompat="@drawable/ic_icon_delete" />
+        app:srcCompat="@drawable/icon_delete" />
 
 </LinearLayout>

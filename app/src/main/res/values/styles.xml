@@ -20,12 +20,12 @@
 
     <style name="textOnButtons">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/text_on_buttons</item>
+        <item name="android:textColor">@color/textOnButtons</item>
     </style>
 
     <style name="textOnTitle">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/text_on_buttons</item>
+        <item name="android:textColor">@color/textOnButtons</item>
     </style>
 
 

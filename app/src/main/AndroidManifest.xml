@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="space.ikostylev.scanningcodeapp">
+    package="com.vk59.mycashbox">
 
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
@@ -20,7 +20,7 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="barcode" /> <!-- To use multiple models: android:value="barcode,model2,model3" -->
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.vk59.mycashbox.MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -28,13 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanActivity"
+        <activity android:name="com.vk59.mycashbox.ScanActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".PaymentActivity"
+        <activity android:name="com.vk59.mycashbox.PaymentActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".PurchasesListActivity"
+        <activity android:name="com.vk59.mycashbox.PurchasesListActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
     </application>

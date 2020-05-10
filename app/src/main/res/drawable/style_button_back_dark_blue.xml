@@ -16,7 +16,7 @@
         android:top="0dp"
         android:bottom="2dp">
         <shape android:shape="oval">
-            <solid android:color="@color/button_pressed_blue"/>
+            <solid android:color="@color/buttonPressedBlue"/>
             <corners android:radius="20dp" />
         </shape>
     </item>

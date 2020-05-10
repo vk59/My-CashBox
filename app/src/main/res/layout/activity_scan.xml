@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ScanActivity">
 
-
     <com.otaliastudios.cameraview.CameraView
         android:id="@+id/cameraView"
         android:layout_width="0dp"
@@ -77,14 +76,14 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:background="@drawable/btn_blue_pressed_dark_blue"
+        android:background="@drawable/button_blue_pressed_dark_blue"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="2dp"
-        android:text="@string/to_scan"
+        android:text="@string/toScan"
         android:textAllCaps="false"
         android:textAppearance="@style/textOnButtons"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
@@ -93,16 +92,16 @@
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <ImageView
-        android:id="@+id/btnToPurchases"
+        android:id="@+id/buttonToPurchases"
         android:layout_height="40dp"
         android:layout_width="40dp"
-        android:background="@drawable/btn_back_blue_pressed_dark_blue"
+        android:background="@drawable/button_back_blue_pressed_dark_blue"
         android:padding="10dp"
-        android:text="@string/to_purchases"
+        android:text="@string/toPurchases"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/buttonStart"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
         app:srcCompat="@drawable/icon_shop" />
 
@@ -115,20 +114,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/panelTop_scan"
+        app:layout_constraintTop_toBottomOf="@+id/panelTopScan"
         app:layout_constraintVertical_bias="0.0">
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/panelTop_scan"
+        android:id="@+id/panelTopScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/top_panel"
+        android:background="@drawable/style_top_panel"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:text="@string/to_scan"
+        android:text="@string/toScan"
         android:textAlignment="center"
         android:textAppearance="@style/textOnTitle"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,6 +156,4 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
