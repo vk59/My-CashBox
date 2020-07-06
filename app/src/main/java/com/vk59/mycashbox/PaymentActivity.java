@@ -21,12 +21,13 @@ import static com.vk59.mycashbox.ScanActivity.products;
 public class PaymentActivity extends AppCompatActivity {
     private static final String TAG = "ERROR QR";
     private String codesProducts = getStringOfCodes();
-    private ImageView qrImage = findViewById(R.id.qrImage);
+    private ImageView qrImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        qrImage = findViewById(R.id.qrImage);
         initQRGEncoder();
         findViewById(R.id.buttonEnd).setOnClickListener(v -> {
             Intent intent = new Intent(PaymentActivity.this, MainActivity.class);
